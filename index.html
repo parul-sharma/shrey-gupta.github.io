@@ -1,32 +1,550 @@
-## Welcome to GitHub Pages
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home ClinSigest</title>
+<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-You can use the [editor on GitHub](https://github.com/shrey-gupta/shrey-gupta.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+</head>
+
+<style>
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+body,
+html { height: 100%;}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {background-color: transparent;}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 220px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    left: 220px;
+    width: 0;
+    height: 100%;
+    margin-left: -220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #1a1a1a;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 70px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    display: inline-block;
+    position: absolute;
+    margin-right: -220px;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 220px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative;
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+.sidebar-nav li:first-child a{
+    color: #fff;
+    background-color: #1a1a1a;
+}
+.sidebar-nav li:first-child:before {
+    color: #fff;
+    background-color: #8c8c8c;
+}
+.sidebar-nav li:nth-child(2):before {
+    background-color: #ec1b5a;
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: #008055;
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: #0099ff;
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: #ffcc80;
+}
+.sidebar-nav li:nth-child(6):before {
+    background-color: #5441be;
+}
+
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+    -moz-transition:  width .2s ease-in;
+    -ms-transition:  width .2s ease-in;
+    transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus{
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 20px;
+    line-height: 44px;
+}
+.sidebar-nav .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: #222;
+    box-shadow: none;
+}
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+
+.hamburger {
+  position: relative;
+  bottom: 25px;
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+}
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+}
+.hamburger.is-closed:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-closed .hamb-top {
+  top: 5px;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-middle {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+  bottom: 5px;
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed:hover .hamb-top {
+  top: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+  bottom: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-bottom {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-open .hamb-top {
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open .hamb-middle { display: none; }
+.hamburger.is-open .hamb-bottom {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+/*-------------------------------*/
+/*            Overlay            */
+/*-------------------------------*/
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250,250,250,.8);
+    z-index: 1;
+}
+
+.page-header{
+  color: black;
+  background-color: white;
+  border-width: 2px;
+  border-color: black;
+}
+
+.navbar-fixed-bottom {
+background-color: #f5f5f5;
+height: 40px;
+}
+
+h1{
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+.img-circle{
+    border-radius: : 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    transition-property: width, height;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    width: 50px;
+    height: 50px;
+    -moz-box-shadow: 0 0 0.2rem 0.2rem #CCCCCC;
+    -webkit-box-shadow: 0 0 0.2rem 0.2rem #CCCCCC;
+    box-shadow: 0 0 0.2rem 0.2rem #CCCCCC;
+}
+
+span1 {
+ display: inline-block;
+color: #fbd0dd;
+position: relative;
+white-space: nowrap;
+top: 0;
+right: 0vmin;
+width: 100%;
+-webkit-animation: move 16s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-delay: 3s;
+-webkit-animation-transition-duration: 0.3s;
+}
+
+@keyframes move {
+0%  { top: 0em; }
+25% { top: -1.5em; }
+50% { top: -3em; }
+75% { top: -4.5em; }
+
+}
+
+.button {
+    position: relative;
+    left:30em;
+    background-color:white;
+    border-radius: 20px;
+    color: #d4114c;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button:hover{
+  background-color:#d4114c;
+  color:white;
+}
+
+</style>
 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<body>
+  <div id="wrapper">
+        <div class="overlay"></div>
 
-```markdown
-Syntax highlighted code block
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                       ClinSigest
+                    </a>
+                </li>
+                <li>
+                    <a href = "index.html">Home</a>
+                </li>
+                <li>
+                    <a href = "about.html">About</a>
+                </li>
+                <li>
+                    <a href = "uploadfile.html">Upload File</a>
+                </li>
+                <li>
+                    <a href = "team.html">Team</a>
+                </li>
+                 <li>
+                    <a href = "contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
 
-- Bulleted
-- List
+        <!-- Page Content -->
+        <div class="container-fluid">
+          <div class="page-header">
+            <div class="row">
 
-1. Numbered
-2. List
+              <div class="col-md-2">
+              <div id="page-content-wrapper">
+              <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+              <span class="hamb-top"></span>
+              <span class="hamb-middle"></span>
+              <span class="hamb-bottom"></span>
+              </button>
+              </div>
+              </div>
+              <div class="col-md-2" style="text-align: right;padding-top:20px;">
+                <img class="img-circle" src="/static/images/logo.png">
+              </div>
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+              <div class="col-md-6" style="text-align: left;">
+              <h1>clin<b style="color: #ec1b5a">S</b>igest</h1>
+              </div>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+            </div>
+          </div>
+          <div class="row">
+          <div class="jumbotron" style="height: 100px; width: 100%; padding:20px 0 20px 100px;border-radius: 0px; background-color:#ec1b5a;">
+          <!--<p style="color:white; font-size: 30px; font-weight: 700;">CLINSIGEST:</p>-->
+            <b style="font-size: 30px;text-align: center; float:left;overflow: hidden;position: relative;height: 50px;font-weight: 200;">
+            <span1>
+              Freely available, online tool for clinicians and healthcare officials. <br />
+              Promotes reporting of actionable information from clinical sequencing data. <br />
+              Cross-checks data for variants from the gene list provided by ACMG. <br />
+              Report all pathogenic variants (secondary findings) as per ACMG report. <br />
+            </span1></b>
+          </div>
+          </div>
+          <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <p style="font-size:20px; text-align:justify;"> Clinsigest takes the individual exome/genome sequencing data and matches it across all variants of the genes from the list provided by ACMG for incindental or secondary findings and reports all the pathogenic variants if present in the genome/exome.</p>
+           <a href="about.html"><button class="button"> know more </button></a>
+          </div>
+          <div class="col-md-1"></div>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shrey-gupta/shrey-gupta.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+        </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+  </div>
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+  <div class="container-fluid">
+  <div class="navbar navbar-fixed-bottom">
+    <div class="row">
+      <div class="col-md-3">
+        <p style="color:#000000; text-align:center;margin-top:20px;">
+          © CSIR-IGIB. All Rights Reserved.
+        </p>
+      </div>
+      <a href = "index.html">
+      <div class="col-md-1" style="background-color:#ec1b5a; height: 60px;">
+      </div>
+      </a>
+
+      <a href = "about.html">
+      <div class="col-md-1" style="background-color:#008055; height: 60px;">
+      </div>
+      </a>
+
+      <a href = "uploadfile.html">
+      <div class="col-md-1" style="background-color:#0099ff; height: 60px;">
+      </div>
+      </a>
+
+      <a href = "team.html">
+      <div class="col-md-1" style="background-color:#ffcc80; height: 60px;">
+      </div>
+      </a>
+
+      <a href = "contact.html">
+      <div class="col-md-1" style="background-color:#5441be; height: 60px;">
+      </div>
+      </a>
+
+      <div class="col-md-1" style="background-color:#583e7e; height: 60px;">
+      </div>
+    </div>
+  </div>
+  </div>
+
+<script>
+  $(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
+
+    trigger.click(function () {
+      hamburger_cross();
+    });
+
+    function hamburger_cross() {
+
+      if (isClosed == true) {
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });
+});
+</script>
+
+</body>
+
+</html>
