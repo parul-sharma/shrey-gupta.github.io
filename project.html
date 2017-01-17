@@ -391,7 +391,7 @@ a:active {
 }
     
 .expandable {
-    padding-top: 0.5vmin;
+    padding-top: 0.3vmin;
     /* overflow set to hidden to hide the expanded text */
     overflow: hidden;
     /* all style changes will ease-in-out for 1s */
@@ -464,9 +464,10 @@ a:active {
 		  
 		<div class="col-md-6" style="text-align:left;">
 		<h3 style="font-size: 3vmin"><b>Database Synchronization</b></h3>
-		<h2 style="font-size: 2.2vmin">Summer Internship &emsp;&emsp;&emsp;&emsp; <i style="font-size: 1.5vmin">at</i>
+		<h2 style="font-size: 2.2vmin">Summer Internship &emsp;&emsp;&emsp;&emsp; <i style="font-size: 1.5vmin"><b>at</b></i>
 		<a href="http://futor.com/index.html">Futor Learning</a> &emsp;&emsp;&emsp;&emsp; June,2012 - August,2012</h2>
-		<div id="s" class="expandable" style="background:#e6e6e6; height: 2.5vmin;">
+			
+		<div id="s" class="expandable" style="background:#e6e6e6; height: 3vmin;">
         	<a href="#!" onclick="toggleHeight(this, 15); return false">Show/hide<a>
     		<p>Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
@@ -525,8 +526,8 @@ a:active {
 function toggleHeight(e, maxHeight) {
     e = document.getElementById("s"); // e = the gray div
     
-    if(e.style.height != '2.5vmin') {
-        e.style.height = '2.5vmin'; // height of one line: 20px
+    if(e.style.height != '3vmin') {
+        e.style.height = '3vmin'; // height of one line: 20px
     } else {
         e.style.height = maxHeight + 'vmin';
     }
