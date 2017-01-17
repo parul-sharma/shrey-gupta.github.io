@@ -389,7 +389,7 @@ a:active {
 }
     
 .expandable {
-    padding-top: 10px;
+    padding-top: 1vmin;
     /* overflow set to hidden to hide the expanded text */
     overflow: hidden;
     /* all style changes will ease-in-out for 1s */
@@ -461,8 +461,8 @@ a:active {
 		</div>
 		  
 		<div class="col-md-6" style="text-align:left;">
-			<p>Here is some text.</p>
-		<div id="s" class="expandable" style="background:#e6e6e6; height: 20px;">
+		<p>Here is some text.</p>
+		<div id="s" class="expandable" style="background:#e6e6e6; height: 3vmin;">
         	<a href="#!" onclick="toggleHeight(this, 150); return false">Show/hide<a>
     		<p>Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
@@ -520,10 +520,10 @@ a:active {
 function toggleHeight(e, maxHeight) {
     e = document.getElementById("s"); // e = the gray div
     
-    if(e.style.height != '20px') {
-        e.style.height = '20px'; // height of one line: 20px
+    if(e.style.height != '3vmin') {
+        e.style.height = '3vmin'; // height of one line: 20px
     } else {
-        e.style.height = maxHeight + 'px';
+        e.style.height = maxHeight + 'vmin';
     }
 }
 
