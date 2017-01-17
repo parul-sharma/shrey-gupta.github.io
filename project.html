@@ -388,90 +388,18 @@ a:active {
     color: #ffcc80;
 }
     
-#holder {
-	margin: 5vmin auto;
-	width: 10vmin;
-	height: 10vmin;
-	position: relative;
+.expandable {
+    padding-top: 10px;
+    /* overflow set to hidden to hide the expanded text */
+    overflow: hidden;
+    /* all style changes will ease-in-out for 1s */
+    -moz-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s;
+}
 
-}
-.pulse {
-	width: 2vmin;
-	height: 2vmin;
-	border: 1.5vmin solid #ffcc80;;
-	-webkit-border-radius: 3vmin;
-	-moz-border-radius: 3vmin;
-	border-radius: 3vmin;
-	background-color: #716f42;
-	z-index: 10;
-	position: absolute;
-	left: 1.5vmin;
-	top: 1.5vmin;
-}
-.dot {
-	border: 1vmin solid #fff601;
-	background: transparent;
-	-webkit-border-radius: 6vmin;
-	-moz-border-radius: 6vmin;
-	border-radius: 6vmin;
-	height: 5vmin;
-	width: 5vmin;
-	-webkit-animation: pulse 3s ease-out;
-	-moz-animation: pulse 3s ease-out;
-	animation: pulse 3s ease-out;
-	-webkit-animation-iteration-count: infinite;
-	-moz-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-	position: absolute;
-	top: 1vmin;
-	left: 1vmin;
-	z-index: 1;
-	opacity: 0;
-}
-@-moz-keyframes pulse {
- 0% {
-	-moz-transform: scale(0);
-	opacity: 0.0;
- }
- 25% {
-	-moz-transform: scale(0);
-	opacity: 0.1;
- }
- 50% {
-	-moz-transform: scale(0.1);
-	opacity: 0.3;
- }
- 75% {
-	-moz-transform: scale(0.5);
-	opacity: 0.5;
- }
- 100% {
-	-moz-transform: scale(1);
-	opacity: 0.0;
- }
-}
-@-webkit-keyframes "pulse" {
- 0% {
-	-webkit-transform: scale(0);
-	opacity: 0.0;
- }
- 25% {
-	-webkit-transform: scale(0);
-	opacity: 0.1;
- }
- 50% {
-	-webkit-transform: scale(0.1);
-	opacity: 0.3;
- }
- 75% {
-	-webkit-transform: scale(0.5);
-	opacity: 0.5;
- }
- 100% {
-	-webkit-transform: scale(1);
-	opacity: 0.0;
- }
-}
 
 </style>
 
@@ -531,12 +459,19 @@ a:active {
           <div class= "row">
 		<div class="col-md-2">
 		</div>
+		  
 		<div class="col-md-6" style="text-align:left;">
-                <div id="holder">
-	                <div class="dot"></div>
-	                <div class="pulse"></div>
-                </div>
+			<p>Here is some text.</p>
+		<div id="s" class="expandable" style="background:#e6e6e6; height: 20px;">
+        	<a href="#!" onclick="toggleHeight(this, 150); return false">Show/hide<a>
+    		<p>Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
+		   In ac tempor quam. Vestibulum eleifend vehicula ligula, et cursus nisl gravida sit amet.
+		   Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+	        </p>
 		</div>
+		</div>
+			
 		<div class="col-md-4">
 		</div>
          </div>    
