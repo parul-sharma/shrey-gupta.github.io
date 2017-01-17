@@ -468,7 +468,7 @@ a:active {
 		<a href="http://futor.com/index.html">Futor Learning</a> | June,2013 - August,2013</h2>
 			
 		<div id="s" class="expandable" style="background:#583e7e; height: 4vmin;">
-        	<a href="#!" onclick="toggleHeight(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
+        	<a href="#!" onclick="toggleHeight1(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
     		<p style="font-size: 2.2vmin; color: white;">Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
 		   In ac tempor quam. Vestibulum eleifend vehicula ligula, et cursus nisl gravida sit amet.
@@ -492,7 +492,7 @@ a:active {
 		<a href="https://www.iitm.ac.in/">IIIT-Madras</a> | June,2014 - August,2014</h2>
 			
 		<div id="s" class="expandable" style="background:#583e7e; height: 4vmin;">
-        	<a href="#!" onclick="toggleHeight(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide<a>
+        	<a href="#!" onclick="toggleHeight2(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide<a>
     		<p style="font-size: 2.2vmin; color: white;">Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
 		   In ac tempor quam. Vestibulum eleifend vehicula ligula, et cursus nisl gravida sit amet.
@@ -546,7 +546,7 @@ a:active {
   });
 });
 	
-function toggleHeight(e, maxHeight) {
+function toggleHeight1(e, maxHeight) {
     e = document.getElementById("s"); // e = the gray div
     
     if(e.style.height != '4vmin') {
@@ -555,6 +555,17 @@ function toggleHeight(e, maxHeight) {
         e.style.height = maxHeight + 'vmin';
     }
 }
+
+function toggleHeight2(e, maxHeight) {
+    e = document.getElementById("s"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+
 
 </script>
 
