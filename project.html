@@ -516,6 +516,17 @@ a:active {
         $('#wrapper').toggleClass('toggled');
   });
 });
+	
+function toggleHeight(e, maxHeight) {
+    e = document.getElementById("s"); // e = the gray div
+    
+    if(e.style.height != '20px') {
+        e.style.height = '20px'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'px';
+    }
+}
+
 </script>
 
 </body>
