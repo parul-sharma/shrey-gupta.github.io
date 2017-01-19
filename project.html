@@ -552,8 +552,8 @@ padding: 0.5vmin, 0vmin, 0.5vmin, 0;
 		</div>
 		</div>
 			
-		<div id="s2" class="expandable" style="background:#583e7e; height: 4vmin;">
-        	<a href="#!" onclick="toggleHeight2(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
+		<div id="s3" class="expandable" style="background:#583e7e; height: 4vmin;">
+        	<a href="#!" onclick="toggleHeight3(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
     		<p style="font-size: 2.2vmin; color: white;">Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
 		   In ac tempor quam. Vestibulum eleifend vehicula ligula, et cursus nisl gravida sit amet.
@@ -588,8 +588,8 @@ padding: 0.5vmin, 0vmin, 0.5vmin, 0;
 		</div>
 		</div>
 			
-		<div id="s2" class="expandable" style="background:#583e7e; height: 4vmin;">
-        	<a href="#!" onclick="toggleHeight2(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
+		<div id="s4" class="expandable" style="background:#583e7e; height: 4vmin;">
+        	<a href="#!" onclick="toggleHeight4(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
     		<p style="font-size: 2.2vmin; color: white;">Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
 		   In ac tempor quam. Vestibulum eleifend vehicula ligula, et cursus nisl gravida sit amet.
@@ -655,6 +655,26 @@ function toggleHeight1(e, maxHeight) {
 
 function toggleHeight2(e, maxHeight) {
     e = document.getElementById("s2"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+
+function toggleHeight3(e, maxHeight) {
+    e = document.getElementById("s3"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+
+function toggleHeight4(e, maxHeight) {
+    e = document.getElementById("s4"); // e = the gray div
     
     if(e.style.height != '4vmin') {
         e.style.height = '4vmin'; // height of one line: 20px
