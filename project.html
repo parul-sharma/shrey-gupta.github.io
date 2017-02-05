@@ -480,8 +480,8 @@ width: 100%;
 		</div>
 		</div>
 			
-		<div id="s4" class="expandable" style="background:#583e7e; height: 4vmin;">
-        	<a href="#!" onclick="toggleHeight4(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
+		<div id="s9" class="expandable" style="background:#583e7e; height: 4vmin;">
+        	<a href="#!" onclick="toggleHeight9(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
     		<p style="font-size: 2.2vmin; color: white;">Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
 		   In ac tempor quam. Vestibulum eleifend vehicula ligula, et cursus nisl gravida sit amet.
@@ -517,8 +517,8 @@ width: 100%;
 		</div>
 		</div>
 			
-		<div id="s4" class="expandable" style="background:#583e7e; height: 4vmin;">
-        	<a href="#!" onclick="toggleHeight4(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
+		<div id="s8" class="expandable" style="background:#583e7e; height: 4vmin;">
+        	<a href="#!" onclick="toggleHeight8(this, 20); return false" style="font-size: 2.2vmin; color: white;">Show/hide</a>
     		<p style="font-size: 2.2vmin; color: white;">Here is some more text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		   Vestibulum vitae urna nulla. Vivamus a purus mi. In hac habitasse platea dictumst. 
 		   In ac tempor quam. Vestibulum eleifend vehicula ligula, et cursus nisl gravida sit amet.
@@ -864,6 +864,56 @@ function toggleHeight3(e, maxHeight) {
 
 function toggleHeight4(e, maxHeight) {
     e = document.getElementById("s4"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+
+function toggleHeight5(e, maxHeight) {
+    e = document.getElementById("s5"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+
+function toggleHeight6(e, maxHeight) {
+    e = document.getElementById("s6"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+	
+function toggleHeight7(e, maxHeight) {
+    e = document.getElementById("s7"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+	
+function toggleHeight8(e, maxHeight) {
+    e = document.getElementById("s8"); // e = the gray div
+    
+    if(e.style.height != '4vmin') {
+        e.style.height = '4vmin'; // height of one line: 20px
+    } else {
+        e.style.height = maxHeight + 'vmin';
+    }
+}
+
+function toggleHeight9(e, maxHeight) {
+    e = document.getElementById("s49"); // e = the gray div
     
     if(e.style.height != '4vmin') {
         e.style.height = '4vmin'; // height of one line: 20px
